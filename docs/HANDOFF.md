@@ -20,37 +20,40 @@ where you are when you wake up:
 
 ## Step 1 — Push to GitHub (60 seconds)
 
-I generated an SSH key pair for you. Add the public key to GitHub:
+There are 2 commits sitting locally on `main`. The remote is set to
+the SSH alias `git@github.com-zirizima:jihoabba/zirizima.git` (uses a
+dedicated key I generated).
 
-```bash
-# show the public key
-cat ~/.ssh/zirizima_deploy.pub
-```
+**Path A — SSH (recommended, faster long-term):**
 
-1. Go to https://github.com/settings/ssh/new
-2. Title: "zirizima deploy" (or whatever)
-3. Paste the public key
-4. Save
+1. Copy this public key:
 
-Then push:
+   ```
+   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH5K1oD0pUT1tSvwNu/rFS7tuJYyiIubCw1FEd0yunLk yumdongja@gmail.com (zirizima deploy)
+   ```
+
+   (Or run `cat ~/.ssh/zirizima_deploy.pub` to copy it.)
+
+2. Open https://github.com/settings/ssh/new
+3. Title: `zirizima deploy` (or whatever). Paste the key. Save.
+4. Push:
+   ```bash
+   cd ~/zirizima
+   git push -u origin main
+   ```
+
+**Path B — gh CLI (also fine, takes 30 seconds longer):**
 
 ```bash
 cd ~/zirizima
-git remote set-url origin git@github.com-zirizima:jihoabba/zirizima.git
+gh auth login            # web flow — pick HTTPS, GitHub.com, browser
+git remote set-url origin https://github.com/jihoabba/zirizima.git
 git push -u origin main
 ```
 
-(`github.com-zirizima` is an SSH host alias I added to `~/.ssh/config`
-that uses the dedicated key — keeps things tidy if you have other
-GitHub accounts.)
-
-**Alternative (faster if you don't want SSH):**
-```bash
-cd ~/zirizima
-gh auth login          # follow the web flow — 30 seconds
-gh repo view jihoabba/zirizima  # confirm the repo exists
-git push -u origin main
-```
+If the repo `jihoabba/zirizima` doesn't exist yet on GitHub, create
+it first (empty, no README) at https://github.com/new — it took the
+default repo URL you gave me at face value.
 
 ## Step 2 — Install Xcode + try the iOS build (30 min)
 
