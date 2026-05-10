@@ -6,17 +6,24 @@
 
 ```
 zirizima/
-├── index.html              app shell (open this in a browser)
+├── index.html              app shell (open in a browser)
 ├── css/style.css           Apple-language design system + screens
 ├── js/
-│   ├── data.js             mock toilet data + API stub functions
+│   ├── data.js             live Supabase REST client + helpers
 │   ├── i18n.js             EN / 中文 / 日本語 / 한국어 strings
 │   ├── icons.js            inline SVG icons
 │   └── app.js              router, state, screen renderers, interactions
+├── ios/                    full SwiftUI iOS app — see ios/README.md
+│   ├── project.yml         XcodeGen config
+│   └── zirizima/           SwiftUI source (8 screens, models, networking)
+├── etl/                    Seoul Open Data → Supabase import scripts
 └── docs/
     ├── BACKEND.md          backend architecture & tech choices
     ├── DATA_MODEL.md       database schema
-    └── API.md              REST endpoint spec
+    ├── API.md              REST endpoint spec
+    ├── SUBMISSION.md       App Store submission step-by-step
+    ├── PRIVACY.md          privacy policy (KO + EN)
+    └── HANDOFF.md          ⭐ start here if you've just woken up
 ```
 
 ## Run the prototype
