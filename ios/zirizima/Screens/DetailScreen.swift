@@ -26,6 +26,9 @@ struct DetailScreen: View {
         .overlay(alignment: .bottom) {
             ctaBar
         }
+        .safeAreaInset(edge: .bottom) {
+            BannerAdStrip(adUnitID: AdConfig.detailBanner)
+        }
         .navigationBarBackButtonHidden(true)
         .task { await loadReviews() }
     }

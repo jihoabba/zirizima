@@ -43,6 +43,9 @@ struct HomeScreen: View {
             )
             .ignoresSafeArea()
         )
+        .safeAreaInset(edge: .bottom) {
+            BannerAdStrip(adUnitID: AdConfig.homeBanner)
+        }
         .task(id: locationKey) { await load() }
         .onChange(of: location.location) { _, newLoc in
             if let c = newLoc?.coordinate {

@@ -62,12 +62,20 @@ Easiest path:
 5. **Availability:** All countries (or pick: South Korea + USA + Japan + China)
 6. **App Privacy** (this is the important one):
    - Tap "Get Started"
-   - Data Types Collected: select "Location" (precise, when in use)
-     - Used for: App Functionality only
+   - **Location** (precise, when in use)
+     - Used for: App Functionality, Third-Party Advertising
      - Linked to user: NO
      - Used for tracking: NO
-   - Data Types Collected: select "User Content" (the rating + tags + comment)
-     - Used for: App Functionality only
+   - **User Content** (rating + tags + comment)
+     - Used for: App Functionality
+     - Linked to user: NO
+     - Used for tracking: NO
+   - **Device ID** (IDFV — collected automatically by Google Mobile Ads SDK; not IDFA, ATT prompt not shown)
+     - Used for: Third-Party Advertising
+     - Linked to user: NO
+     - Used for tracking: NO
+   - **Diagnostics** (Crash Data, Performance Data — collected by Google Mobile Ads SDK)
+     - Used for: App Functionality, Analytics
      - Linked to user: NO
      - Used for tracking: NO
 
