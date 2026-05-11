@@ -16,6 +16,7 @@
 		3C9B49479A288CEE094520C9 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78ECC03A5BB980EBE810BF4 /* BannerAdView.swift */; };
 		409363B9217E3C0684527DB6 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415E4D8D4EAD2180D76A1F92 /* Components.swift */; };
 		4234EDE241471E2C4FBDE579 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE815F5320667B16038F1BF /* App.swift */; };
+		5A4C8F5669CEE87CA0ADE52E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65572C132A7A920BF4C1DEE0 /* Assets.xcassets */; };
 		5B8E12549BF683EBD4D566F5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32B909C272F7329B3DF39B /* Colors.swift */; };
 		750870EED72E39C5F94D2AF3 /* SupabaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5054FCC6A3D3A596F7ACA /* SupabaseAPI.swift */; };
 		7C3A81DA7EF63A67C75A56B8 /* LanguageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995AC4ABCD6EECEAEB28AFB /* LanguageScreen.swift */; };
@@ -44,6 +45,7 @@
 		415E4D8D4EAD2180D76A1F92 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		511776B85BF806BE5D917C92 /* DeviceID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceID.swift; sourceTree = "<group>"; };
 		5B73C998CEAC958C3D1ED6E5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		65572C132A7A920BF4C1DEE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7243F53FCD470A7B370D9208 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		78E5054FCC6A3D3A596F7ACA /* SupabaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseAPI.swift; sourceTree = "<group>"; };
 		838CF437095C787093C7CE68 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				1C710AA3BD4EAD09A45186BF /* Screens */,
 				CDE815F5320667B16038F1BF /* App.swift */,
 				8F496E3F4F379112C0324D08 /* AppState.swift */,
+				65572C132A7A920BF4C1DEE0 /* Assets.xcassets */,
 				1B39E094753DB394923EC9BF /* Info.plist */,
 			);
 			path = zirizima;
@@ -192,6 +195,7 @@
 			buildConfigurationList = C4CDEDE782C5B0D5EFD6BE61 /* Build configuration list for PBXNativeTarget "zirizima" */;
 			buildPhases = (
 				6500AADD554CE76664F12BC1 /* Sources */,
+				0CD0723AA085122E55429A87 /* Resources */,
 				8B502D7A45009DC21E3ACFAB /* Frameworks */,
 			);
 			buildRules = (
@@ -216,7 +220,7 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					19A5186DBB40FA8B20ACA560 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = 5Y9N33S924;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -242,6 +246,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CD0723AA085122E55429A87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A4C8F5669CEE87CA0ADE52E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6500AADD554CE76664F12BC1 /* Sources */ = {
@@ -408,7 +423,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Y9N33S924;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = zirizima/Info.plist;
@@ -433,7 +448,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Y9N33S924;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = zirizima/Info.plist;

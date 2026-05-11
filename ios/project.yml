@@ -26,10 +26,7 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: zirizima
-        excludes:
-          - "Assets.xcassets"
     resources:
-      - path: zirizima/Assets.xcassets
       - path: zirizima/Resources
     dependencies:
       - package: GoogleMobileAds
@@ -48,6 +45,7 @@ targets:
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
         ITSAppUsesNonExemptEncryption: false
+        CFBundleIconName: AppIcon
         GADApplicationIdentifier: ca-app-pub-9339911776645987~7131042838
         SKAdNetworkItems:
           - SKAdNetworkIdentifier: cstr6suwn9.skadnetwork
@@ -107,6 +105,6 @@ targets:
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         ENABLE_PREVIEWS: YES
         SWIFT_EMIT_LOC_STRINGS: YES
-        DEVELOPMENT_TEAM: ""  # set this in Xcode after signing in
+        DEVELOPMENT_TEAM: "5Y9N33S924"
         CODE_SIGN_STYLE: Automatic
         GENERATE_INFOPLIST_FILE: NO
