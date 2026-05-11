@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — zirizima</title>
+<style>
+  :root {
+    --ink: #111;
+    --ink-48: rgba(17,17,17,0.48);
+    --ink-12: rgba(17,17,17,0.12);
+    --canvas: #fdfbf6;
+    --parchment: #f5efe2;
+    --primary: #0066cc;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+    background: var(--canvas);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+  .brand { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 4px; }
+  .brand .dot { color: var(--primary); }
+  .updated { color: var(--ink-48); font-size: 14px; margin: 0 0 40px; }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 48px 0 16px; }
+  h2 { font-size: 20px; font-weight: 700; margin: 32px 0 8px; }
+  h3 { font-size: 17px; font-weight: 700; margin: 20px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul { padding-left: 22px; margin: 0 0 14px; }
+  li { margin: 4px 0; }
+  a { color: var(--primary); text-decoration: none; border-bottom: 1px solid rgba(0,102,204,0.32); }
+  a:hover { border-bottom-color: var(--primary); }
+  .tldr {
+    background: var(--parchment);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+  }
+  .tldr h2 { margin-top: 0; }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--ink-12);
+    margin: 56px 0 40px;
+  }
+  .lang-switch {
+    display: inline-flex;
+    gap: 4px;
+    background: var(--parchment);
+    border-radius: 999px;
+    padding: 4px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  .lang-switch a {
+    border: 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: var(--ink);
+  }
+  .lang-switch a.active { background: white; color: var(--primary); font-weight: 600; }
+  footer {
+    margin-top: 64px;
+    color: var(--ink-48);
+    font-size: 13px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <p class="brand">zirizima<span class="dot">.</span></p>
+  <p class="updated">Privacy Policy · Last updated 2026-05-10</p>
+
+  <div class="lang-switch">
+    <a href="#en" class="active">English</a>
+    <a href="#ko">한국어</a>
+  </div>
+
+  <section id="en">
+    <h1>Privacy Policy</h1>
+    <p>zirizima is a free toilet finder app for Seoul, designed for foreign tourists. We respect your privacy. This policy explains what data the app uses, how it uses it, and what we never do.</p>
+
+    <div class="tldr">
+      <h2>TL;DR</h2>
+      <ul>
+        <li>We use your location only to show toilets near you. We never store it.</li>
+        <li>You can leave anonymous ratings. We don't know who you are.</li>
+        <li>We don't show ads. We don't sell anything to anyone.</li>
+        <li>No account, no email, no phone number, no IDFA.</li>
+      </ul>
+    </div>
+
+    <h2>Data we use</h2>
+
+    <h3>Location</h3>
+    <p>The app uses your iPhone's location (via Core Location, "When In Use" permission) to compute distances to nearby toilets. The location is sent to our backend only as a one-shot lat/lng pair to query the nearest entries — it is never written to disk or logged.</p>
+    <p>You can use the app without granting location: the home screen falls back to the Gyeongbokgung area (a tourist hotspot in central Seoul).</p>
+
+    <h3>Anonymous device identifier</h3>
+    <p>On first launch, the app generates a random UUID and stores it in <code>UserDefaults</code>. This UUID is sent with every rating you leave so that:</p>
+    <ul>
+      <li>You can update an old rating you submitted, instead of duplicating it</li>
+      <li>We can rate-limit abusive devices (5 ratings per hour max)</li>
+    </ul>
+    <p>The UUID is <strong>not</strong> linked to your Apple ID, your iPhone serial number, your IDFA, your IP address, your name, or any other personal identifier. Deleting the app on your iPhone deletes the UUID (we have no way to recover it).</p>
+
+    <h3>Ratings, tags, comments</h3>
+    <p>When you tap "Rate" and submit, the following is sent to our backend:</p>
+    <ul>
+      <li>A 1–5 star rating</li>
+      <li>Zero or more pre-defined tags (clean, busy, has_paper, etc.)</li>
+      <li>Optional one-line comment (≤280 characters)</li>
+      <li>The ID of the toilet</li>
+      <li>Your anonymous device UUID (see above)</li>
+      <li>Your selected app language ("en", "ko", "zh", or "ja")</li>
+    </ul>
+    <p>These are stored on our backend and shown to other users as anonymous reviews ("Anonymous · 3d ago"). They are not associated with any identifier other than your device UUID.</p>
+
+    <h2>Data we don't use</h2>
+    <ul>
+      <li>Apple ID, email, phone number</li>
+      <li>IDFA (advertising identifier)</li>
+      <li>IP address (we do not log inbound IPs)</li>
+      <li>Crash reports tied to identifiable users (no third-party crash SDK)</li>
+      <li>Analytics cookies / usage tracking</li>
+      <li>Photos, microphone, camera, contacts, calendar, motion, health</li>
+    </ul>
+
+    <h2>Where data lives</h2>
+    <ul>
+      <li><strong>Mobile app</strong>: Anonymous device UUID and app language preference (UserDefaults). That's it.</li>
+      <li><strong>Backend</strong>: Toilets dataset (public data from Seoul Open Data Plaza), areas, and the ratings users submit. Hosted on Supabase Inc., AWS Seoul region.</li>
+    </ul>
+
+    <h2>Third-party services</h2>
+    <h3>Google Maps (handoff)</h3>
+    <p>When you tap "Take me there", the app opens Google Maps with the toilet's coordinates as a destination. From that moment, you are interacting with Google Maps and its <a href="https://policies.google.com/privacy">privacy policy</a> applies. zirizima sends Google nothing — it just opens a URL.</p>
+
+    <h3>Supabase (backend host)</h3>
+    <p>Our backend runs on <a href="https://supabase.com">Supabase Inc.</a> They process the API requests we send them. They do not have access to anything beyond the toilets database and the anonymous review data described above.</p>
+
+    <h2>Children's privacy</h2>
+    <p>The app is not directed at children under 13. We do not knowingly collect any data from anyone, regardless of age.</p>
+
+    <h2>Your rights</h2>
+    <ul>
+      <li>Stop using the app and delete it. This deletes the device UUID. Past ratings will continue to exist as anonymous data — there is no way to associate them back to you, because we never associated them in the first place.</li>
+      <li>Disable location access for zirizima in iPhone Settings → Privacy.</li>
+    </ul>
+
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy in a way that materially affects how we handle your data, we'll update the "Last updated" date above. For non-trivial changes, we'll show a notice in the app on next launch.</p>
+
+    <h2>Contact</h2>
+    <p>Questions? <a href="mailto:yumdongja@gmail.com">yumdongja@gmail.com</a></p>
+  </section>
+
+  <hr>
+
+  <section id="ko">
+    <h1>개인정보 처리방침</h1>
+    <p>zirizima는 서울을 방문하는 외국인 관광객을 위한 무료 화장실 찾기 앱입니다. 저희는 사용자의 개인정보를 존중합니다.</p>
+
+    <div class="tldr">
+      <h2>요약</h2>
+      <ul>
+        <li>위치는 근처 화장실을 보여주기 위해서만 사용하고, 저장하지 않습니다.</li>
+        <li>익명으로 별점을 남길 수 있습니다. 누가 남겼는지 저희는 모릅니다.</li>
+        <li>광고 없음, 판매하는 것 없음.</li>
+        <li>계정·이메일·전화번호·IDFA 수집 없음.</li>
+      </ul>
+    </div>
+
+    <h2>수집하는 정보</h2>
+
+    <h3>위치</h3>
+    <p>근처 화장실까지의 거리를 계산하기 위해 iPhone의 위치 정보를 사용합니다. 서버에는 일회성으로 위도/경도만 전달되며, 저장이나 로깅하지 않습니다.</p>
+
+    <h3>익명 기기 식별자</h3>
+    <p>앱 최초 실행 시 무작위 UUID를 생성해 UserDefaults에 저장합니다. 이 UUID는 (1) 이전에 남긴 평점 수정 (2) 분당 평점 제한 (악용 방지) 용도로만 사용됩니다.</p>
+    <p>이 UUID는 Apple ID, IDFA, 전화번호, 이메일, IP 주소 등 어떤 개인 식별 정보와도 연결되지 않습니다. 앱을 삭제하면 UUID도 같이 삭제됩니다.</p>
+
+    <h3>사용자가 남기는 평점·태그·한줄평</h3>
+    <p>"평가하기"에서 제출하는 정보:</p>
+    <ul>
+      <li>1~5점 별점</li>
+      <li>미리 정의된 태그 (깨끗함, 붐빔, 휴지있음 등)</li>
+      <li>선택적 한 줄 코멘트 (최대 280자)</li>
+      <li>화장실 ID, 익명 기기 UUID, 선택한 언어</li>
+    </ul>
+    <p>이 데이터는 익명으로 다른 사용자에게 표시됩니다.</p>
+
+    <h2>수집하지 않는 정보</h2>
+    <p>Apple ID, 이메일, 전화번호, IDFA, IP, 사진, 마이크, 카메라, 연락처, 캘린더, 모션, 건강 정보 등.</p>
+
+    <h2>제3자 서비스</h2>
+    <ul>
+      <li><strong>Google Maps</strong> — "안내 시작" 시 외부 앱으로 핸드오프합니다.</li>
+      <li><strong>Supabase</strong> — 백엔드 호스팅. AWS 서울 리전.</li>
+    </ul>
+
+    <h2>문의</h2>
+    <p><a href="mailto:yumdongja@gmail.com">yumdongja@gmail.com</a></p>
+  </section>
+
+  <footer>© zirizima · yumdongja@gmail.com</footer>
+</main>
+</body>
+</html>
