@@ -34,37 +34,24 @@ struct DetailScreen: View {
     }
 
     private var header: some View {
-        ZStack(alignment: .top) {
-            LinearGradient(
-                colors: toilet.gradientColors.map { Color(hex: $0) },
-                startPoint: .topLeading, endPoint: .bottomTrailing
-            )
-            .frame(height: 240)
-            .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-
-            HStack {
-                Button { dismiss() } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(Color.zInk)
-                        .frame(width: 36, height: 36)
-                        .background(.ultraThinMaterial)
-                        .clipShape(Circle())
-                }
-                Spacer()
-                Button {
-                    state.toggleSave(toilet.id)
-                } label: {
-                    Image(systemName: state.saved.contains(toilet.id) ? "heart.fill" : "heart")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(state.saved.contains(toilet.id) ? Color.zPrimary : Color.zInk)
-                        .frame(width: 36, height: 36)
-                        .background(.ultraThinMaterial)
-                        .clipShape(Circle())
-                }
+        HStack {
+            Button { dismiss() } label: {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(Color.zInk)
+                    .frame(width: 36, height: 36)
+                    .overlay(Circle().stroke(Color.zHairline, lineWidth: 1))
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 8)
+            Spacer()
+            Button {
+                state.toggleSave(toilet.id)
+            } label: {
+                Image(systemName: state.saved.contains(toilet.id) ? "heart.fill" : "heart")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(state.saved.contains(toilet.id) ? Color.zPrimary : Color.zInk)
+                    .frame(width: 36, height: 36)
+                    .overlay(Circle().stroke(Color.zHairline, lineWidth: 1))
+            }
         }
     }
 

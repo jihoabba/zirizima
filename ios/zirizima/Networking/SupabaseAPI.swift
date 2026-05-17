@@ -38,7 +38,12 @@ actor SupabaseAPI {
     // MARK: - Generic helpers
 
     private func request(path: String, method: String = "GET", body: Data? = nil) async throws -> Data {
-        var req = URLRequest(url: baseURL.appendingPathComponent(path))
+        // Use URL(string:relativeTo:) so query strings (`?a=b&c=d`) are
+        // preserved. appendingPathComponent percent-encodes `?` and `&`.
+        guard let url = URL(string: path, relativeTo: baseURL) else {
+            throw SupabaseError.http(0, "bad path: \(path)")
+        }
+        var req = URLRequest(url: url)
         req.httpMethod = method
         req.setValue(apiKey, forHTTPHeaderField: "apikey")
         req.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
@@ -95,6 +100,21 @@ actor SupabaseAPI {
 
     func allToilets(lat: Double, lng: Double, filter: ToiletFilter) async throws -> [Toilet] {
         try await nearestToilets(lat: lat, lng: lng, limit: 50, filter: filter)
+    }
+
+    struct SearchParams: Encodable {
+        let in_q: String
+        let in_lat: Double
+        let in_lng: Double
+        let in_limit: Int
+    }
+
+    func searchToilets(query: String, lat: Double, lng: Double, limit: Int = 30) async throws -> [Toilet] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return [] }
+        return try await rpc("search_toilets", params: SearchParams(
+            in_q: trimmed, in_lat: lat, in_lng: lng, in_limit: limit
+        ))
     }
 
     // MARK: - Areas

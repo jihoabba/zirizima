@@ -8,6 +8,7 @@ struct HomeScreen: View {
     @State private var loading = true
     @State private var toilets: [Toilet] = []
     @State private var error: String?
+    @State private var showLanguageSheet = false
 
     var body: some View {
         ScrollView {
@@ -46,6 +47,12 @@ struct HomeScreen: View {
         .safeAreaInset(edge: .bottom) {
             BannerAdStrip(adUnitID: AdConfig.homeBanner)
         }
+        .sheet(isPresented: $showLanguageSheet) {
+            NavigationStack {
+                LanguageScreen(onContinue: { showLanguageSheet = false })
+            }
+            .presentationDetents([.medium, .large])
+        }
         .task(id: locationKey) { await load() }
         .onChange(of: location.location) { _, newLoc in
             if let c = newLoc?.coordinate {
@@ -64,7 +71,7 @@ struct HomeScreen: View {
                 .font(.zSubtitle).zTight()
                 .foregroundStyle(Color.zInk)
             Spacer()
-            HStack(spacing: 8) {
+            Button { showLanguageSheet = true } label: {
                 Text(state.language.uppercased())
                     .font(.system(size: 11, weight: .semibold))
                     .foregroundStyle(Color.zInk48)
@@ -72,6 +79,7 @@ struct HomeScreen: View {
                     .padding(.vertical, 5)
                     .overlay(Capsule().stroke(Color.zHairline, lineWidth: 1))
             }
+            .buttonStyle(.plain)
         }
         .padding(4)
     }

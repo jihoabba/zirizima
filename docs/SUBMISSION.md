@@ -97,27 +97,34 @@ the iPhone 6.7" Simulator (iPhone 15 Pro Max).
 
 ## Step 5 — Metadata (20 min)
 
-In App Store Connect → App Information:
+In App Store Connect → App Information (English, Primary):
 
-- **Promotional text** (170 chars):
-  > Find the nearest free public toilet in Seoul. 4,400+ locations,
-  > English signage info, ratings from real travelers.
+- **Subtitle** (30 chars):
+  > Seoul Free Toilets
+
+- **Promotional Text** (170 chars):
+  > Need a bathroom in Seoul? Find the nearest free public toilet in seconds. 4,400+ locations citywide, in your language, with walking directions and real ratings.
 
 - **Description** (up to 4000 chars):
   > zirizima is the fastest way to find a free public toilet in Seoul.
-  > Designed for tourists. Available in English, 中文, 日本語, 한국어.
   >
-  > • Every public toilet in Seoul — 4,400+ locations from official city data
-  > • Distance + walking time at a glance
-  > • Filter by wheelchair access, baby changing, 24-hour, English signage
-  > • Real ratings from other travelers
-  > • One tap to walking directions in Google Maps
-  > • Works in English, Chinese, Japanese, Korean
+  > Built for travelers in a hurry. Open the app and the home screen is the answer — the nearest toilet, the distance, and how long it'll take to walk there. No menus, no map zooming, no sign-up.
   >
-  > No account required. Your location is never stored or shared.
+  > • Complete coverage — 4,400+ public toilets, sourced from official Seoul city data
+  > • Instant answer — nearest toilet, distance, and walking time on the home screen
+  > • Smart filters — wheelchair access, baby changing, 24-hour, English signage
+  > • Real reviews — ratings and tags from other travelers (cleanliness, paper, soap)
+  > • One-tap directions — hands off to walking directions in Google Maps
+  > • Four languages — English, 中文, 日本語, 한국어
+  >
+  > No account. No tracking. Your location is used only to find nearby toilets and is never stored on our servers.
+  >
+  > Seoul is one of the cleanest cities in the world to travel in — but finding the right toilet at the right moment (open, free, with paper, accessible) can still be stressful. zirizima removes that stress.
+  >
+  > Made with care for visitors to Seoul.
 
 - **Keywords** (100 chars, comma-separated):
-  > toilet,bathroom,restroom,seoul,korea,travel,tourist,free,wc,public
+  > toilet,bathroom,restroom,seoul,korea,travel,tourist,free,wc,public,map,nearby
 
 - **Support URL:** https://zirizima.app/support  (or a placeholder GitHub
   page — Apple just needs *some* URL that loads)
